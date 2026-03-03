@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roboto Font Freezer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .font-section {
+            margin: 20px 0;
+        }
+        .font-selection {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Roboto Font Freezer</h1>
+    <div class="font-section">
+        <h2>Roboto Fonts</h2>
+        <div class="font-selection">
+            <input type="checkbox" id="roboto" value="roboto">
+            <label for="roboto">Roboto</label>
+        </div>
+    </div>
+    <div class="font-section">
+        <h2>Roboto Slab Fonts</h2>
+        <div class="font-selection">
+            <input type="checkbox" id="robotoslab" value="robotoslab">
+            <label for="robotoslab">Roboto Slab</label>
+        </div>
+    </div>
+    <button id="downloadBtn">Download Selected Fonts</button>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const selectedFonts = [];
+            if (document.getElementById('roboto').checked) {
+                selectedFonts.push('Roboto');
+            }
+            if (document.getElementById('robotoslab').checked) {
+                selectedFonts.push('Roboto Slab');
+            }
+
+            if (selectedFonts.length > 0) {
+                alert('Downloading: ' + selectedFonts.join(', '));
+                // Implement the actual download functionality here
+            } else {
+                alert('Please select at least one font to download.');
+            }
+        });
+    </script>
+</body>
+</html>
